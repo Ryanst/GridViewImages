@@ -6,15 +6,17 @@ import android.widget.GridView;
 
 public class MainActivity extends AppCompatActivity {
     private GridView mPhotoWall;
-    private PhotoWallAdapter adapter;
+    private GridViewImageAdapter adapter;
+    private GridViewVolleyImageAdapter volleyAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mPhotoWall = (GridView) findViewById(R.id.photo_wall);
-        adapter = new PhotoWallAdapter(this,0,Images.imageThumbUrls,mPhotoWall);
-        mPhotoWall.setAdapter(adapter);
+        volleyAdapter = new GridViewVolleyImageAdapter(this, Images.imageThumbUrls);
+        //adapter = new GridViewImageAdapter(this,0,Images.imageThumbUrls,mPhotoWall);
+        mPhotoWall.setAdapter(volleyAdapter);
     }
 
     @Override

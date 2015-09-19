@@ -24,7 +24,7 @@ import javax.net.ssl.HttpsURLConnection;
 /**
  * Created by zhengjt on 15/9/18.
  */
-public class PhotoWallAdapter extends ArrayAdapter<String> implements AbsListView.OnScrollListener {
+public class GridViewImageAdapter extends ArrayAdapter<String> implements AbsListView.OnScrollListener {
     private Set<BitmapWorkerTask> taskCollection;
     private LruCache<String ,Bitmap> mMemoryCache;
     private GridView mPhotoWall;
@@ -32,7 +32,7 @@ public class PhotoWallAdapter extends ArrayAdapter<String> implements AbsListVie
     private int mVisibleItemCount;
     private boolean isFirstEnter = true;
 
-    public PhotoWallAdapter(Context context,int textViewResourceId,String[] objects,GridView photoWall){
+    public GridViewImageAdapter(Context context, int textViewResourceId, String[] objects, GridView photoWall){
         super(context,textViewResourceId,objects);
         mPhotoWall = photoWall;
         taskCollection = new HashSet<BitmapWorkerTask>();
